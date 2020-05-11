@@ -15,6 +15,11 @@ function validator (email, password) {
             email: true,
             password: true,
         };
+    } else if (emailCheck.test(email) && !passwordCheck.test(password)) {
+        return {
+            email: true,
+            password: false,
+        };
     } else {
         return {
             email: false,
